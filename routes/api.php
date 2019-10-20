@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Telegram\Bot\Laravel\Facades\Telegram;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('bot/sendmessage', function() {
-    Telegram::sendMessage([
-        'chat_id' => env('RECIPIENT_CHAT_ID', ''),
-        'text' => request()->message
-    ]);
-    return;
-});
+Route::post('bot/send-message', 'MessageController@sendMessage');
