@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('bot/send-message', 'MessageController@sendMessage');
+Route::post('bot/send-message', 'Api\MessageController@sendMessage');
