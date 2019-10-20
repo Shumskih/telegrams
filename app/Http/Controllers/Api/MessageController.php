@@ -12,7 +12,7 @@ class MessageController extends Controller
      *
      * @return void
      */
-    public function sendMessage(): void
+    public function toTelegram(): void
     {
         Telegram::sendMessage([
             'chat_id' => env('RECIPIENT_CHAT_ID', 'RECIPIENT_CHAT_ID'),
